@@ -3,9 +3,9 @@
 ### ** By: Abdullah Albayati **
 ### *Songs covers by Nina*
 #### The Customer can pick 3 different songs in this website and it will display the songs if available in the website. It also displays information about the songs. The customer should also be able to rate, review, suggest a song or delete added review.
-Song 1 is 
-Song 2 is 
-Song 3 is 
+##### Song 1 is 
+##### Song 2 is 
+##### Song 3 is 
 ***
 #### This project waxs creatated with the use of Trello board and ERD scheme. Link to Trello [HERE](https://trello.com/b/8u5NEHCV/nina)
 #### ERD React link [HERE](https://lucid.app/lucidchart/813a0e65-1b68-4181-8fc7-0124637c747e/edit?invitationId=inv_b1a80dab-caba-44dc-b1dd-93eb87982464)
