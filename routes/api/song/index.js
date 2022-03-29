@@ -44,4 +44,18 @@ router.get('/:id', async(req, res) => {
     }
 })
 
+// delete song by id
+router.delete('/:id', async(req, res) => {
+    try {
+        const songId = req.params.id
+        const deletedSong = await songModel.findByIdAndDelete(songId)
+        res.json(deletedSong)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            error: error.message
+        })
+    }
+})
+
 module.exports = router
