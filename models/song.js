@@ -8,3 +8,4 @@ const Songs = new Schema(
         ratings: { type: String, required: true}
     }
 )
+module.exports = Songs
