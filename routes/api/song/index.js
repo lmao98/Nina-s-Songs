@@ -30,4 +30,18 @@ router.get('/', async (req, res) => {
     }
 })
 
+// get song by id
+router.get('/:id', async(req, res) => {
+    try {
+        const songId = req.params.id
+        const song = await songModel.findById(songId)
+        res.json(song)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            error: error.message
+        })
+    }
+})
+
 module.exports = router
