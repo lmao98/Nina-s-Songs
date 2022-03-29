@@ -5,7 +5,9 @@ const Songs = new Schema(
         title: { type: String, required: true},
         type: { type: String, required: true},
         description: { type: String, required: true},
-        ratings: [{ type: Number}]
+       // ratings: [{ type: Number}]
+        reviewIds: [{type: Schema.Types.ObjectId}]
+
     },
     {
         toJSON:{
@@ -14,9 +16,20 @@ const Songs = new Schema(
     }
 )
 
+Songs.virtual('reviews', {
+    ref: "reviews",
+    localField: "reviewIds",
+    foreignField: "_id",
+    justOne: false
+})
+
 Songs.virtual('avgRating').get(function() {
-    const total = this.ratings.reduce((acc,rating) => acc + rating ,0)
-    const count = this.ratings.length
+    console.log(this.reviews)
+    if(this.reviews === undefined) {
+        return undefined
+    }
+    const total = this.reviews.reduce((acc,review) => acc + review.value ,0)
+    const count = this.reviews.length
     return total / count 
 })
 

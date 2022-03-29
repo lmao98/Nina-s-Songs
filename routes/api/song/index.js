@@ -1,5 +1,6 @@
 const express = require('express')
 const songModel = require('../../../models/song')
+const reviewModel = require('../../../models/review')
 
 const router = express.Router()
 
@@ -34,7 +35,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async(req, res) => {
     try {
         const songId = req.params.id
-        const song = await songModel.findById(songId)
+        const song = await songModel.findById(songId).populate('reviews')
         res.json(song)
     } catch (error) {
         console.log(error)
@@ -62,9 +63,10 @@ router.delete('/:id', async(req, res) => {
 router.put('/:id/review', async(req, res) => {
     try {
         const songId = req.params.id
-        const rating = req.body.rating
+        const review = req.body
         const song = await songModel.findById(songId)
-        song.ratings.push(rating)
+        const newReview = await reviewModel.create(review)
+        song.reviewIds.push(newReview)
         await song.save()
         res.json(song)
     } catch (error) {
