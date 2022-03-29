@@ -1,7 +1,7 @@
 const express = require('express')
-const apiRoutes = require('./api')
+const songRoutes = require('./song')
 
 const router = express.Router()
-router.use('/api', apiRoutes)
+router.use('/song', songRoutes)
 
 module.exports = router
