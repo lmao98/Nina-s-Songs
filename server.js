@@ -12,7 +12,7 @@ app.use(express.urlencoded({
 }))
 app.use('/', routes)
 
-db.once('connection',() => {
+db.once('open',() => {
     app.listen(PORT,() => {
         console.log('App listening')
     })
