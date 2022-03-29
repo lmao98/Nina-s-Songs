@@ -6,10 +6,15 @@ const Songs = new Schema(
         type: { type: String, required: true},
         description: { type: String, required: true},
         ratings: [{ type: Number}]
+    },
+    {
+        toJSON:{
+            virtuals: true
+        }
     }
 )
 
-Songs.virtual('avgRatings').get(function() {
+Songs.virtual('avgRating').get(function() {
     const total = this.ratings.reduce((acc,rating) => acc + rating ,0)
     const count = this.ratings.length
     return total / count 
