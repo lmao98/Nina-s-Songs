@@ -4,18 +4,30 @@ const songModel = require('../../../models/song')
 const router = express.Router()
 
 // Add a song
-router.post('/', async(req, res) => {
+router.post('/', async (req, res) => {
     try {
         const songInfo = req.body
         const newSong = await songModel.create(songInfo)
-        res.json(newSong) 
+        res.json(newSong)
     } catch (error) {
         console.log(error)
-       res.status(500).json({
-           error: error.message
-       }) 
+        res.status(500).json({
+            error: error.message
+        })
     }
+})
 
+// get all songs
+router.get('/', async (req, res) => {
+    try {
+        const allSongs = await songModel.find({})
+        res.json(allSongs)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            error: error.message
+        })
+    }
 })
 
 module.exports = router
