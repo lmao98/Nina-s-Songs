@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/lmao98/Nina-s-Songs#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
-    "mongoose": "^6.2.9"
+    "mongoose": "^6.2.9",
+    "morgan": "^1.10.0"
   }
 }
