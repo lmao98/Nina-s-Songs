@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lmao98/Nina-s-Songs/issues"
   },
-  "homepage": "https://github.com/lmao98/Nina-s-Songs#readme"
+  "homepage": "https://github.com/lmao98/Nina-s-Songs#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
