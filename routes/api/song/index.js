@@ -58,4 +58,21 @@ router.delete('/:id', async(req, res) => {
     }
 })
 
+// add a review
+router.put('/:id/review', async(req, res) => {
+    try {
+        const songId = req.params.id
+        const rating = req.body.rating
+        const song = await songModel.findById(songId)
+        song.ratings.push(rating)
+        await song.save()
+        res.json(song)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            error: error.message
+        })
+    }
+})
+
 module.exports = router
