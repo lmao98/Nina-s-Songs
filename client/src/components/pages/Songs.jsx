@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Song from '../Song'
 
 function Songs() {
   const [songList, setSongList] = useState([])
@@ -10,12 +11,13 @@ function Songs() {
     }
     updateSongList()
   }, [])
-  useEffect(() => {
-    console.log(songList)
-  }, [songList])
 
   return (
-    <div>Songs</div>
+    <div>
+      {songList.map((song) => {
+        return <Song song={song} key={song._id} />
+      })}
+    </div>
   )
 }
 
