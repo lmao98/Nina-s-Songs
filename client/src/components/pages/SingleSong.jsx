@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import SongPlayer from '../SongPlayer'
 
 function SingleSong() {
   const { id } = useParams()
@@ -12,11 +13,15 @@ function SingleSong() {
     }
     updateSong()
   }, [])
-  useEffect(() => {
-    console.log(song)
-  }, [song])
+
   return (
-    <div>SingleSong</div>
+    song ? <>
+      <h1>{song.songName}</h1>
+      <h2>{song.bandName}</h2>
+      <SongPlayer {...song} />
+
+    </> :
+      null
   )
 }
 
