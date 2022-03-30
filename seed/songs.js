@@ -13,33 +13,41 @@ const main = async (db) => {
 
     const songs = [
         {
-            title: 'test Mia',
-            type: 'cover',
-            description: 'text',
+            src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241397061&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            bandLink: "https://soundcloud.com/noor-alseed",
+            bandName:"raven club",
+            songLink: "https://soundcloud.com/noor-alseed/violt",
+            songName:"violt",
             reviewIds: [
                 abeReview._id
             ]
         },
         {
-            title: 'test 2 Mia',
-            type: 'cover',
-            description: 'text',
+            src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241204278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            bandLink: "https://soundcloud.com/noor-alseed",
+            bandName:"raven club",
+            songLink: "https://soundcloud.com/noor-alseed/at-my-worst",
+            songName:"at my worst",
             reviewIds: [
                 moReview._id
             ]
         },
         {
-            title: 'test 3 Mia',
-            type: 'original',
-            description: 'text',
+            src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241202718&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            bandLink: "https://soundcloud.com/noor-alseed",
+            bandName:"raven club",
+            songLink: "https://soundcloud.com/noor-alseed/heather",
+            songName:"HEATHER",
             reviewIds: [
                 omarReview._id
             ]
         },
         {
-            title: 'test 4 Mia',
-            type: 'original',
-            description: 'text',
+            src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241200324&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+            bandLink: "https://soundcloud.com/noor-alseed",
+            bandName:"raven club",
+            songLink: "https://soundcloud.com/noor-alseed/no-time-to-die",
+            songName:"no time to die",
             reviewIds: [
                 ahmedReview._id,
                 kimReview._id
