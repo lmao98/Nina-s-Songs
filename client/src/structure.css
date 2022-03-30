@@ -7,6 +7,10 @@ nav a {
     padding-right: 0.5em;
 }
 
+.hero {
+    height: 60vh;
+}
+
 .container {
     width: 100vw;
     height: 100vh;
