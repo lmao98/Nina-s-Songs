@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Songs from "./components/pages/Songs";
+import SingleSong from "./components/pages/SingleSong";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/songs" element={<Songs />} />
+            <Route path="/song/:id" element={<SingleSong />} />
           </Routes>
         </div>
         <div className="column top">
