@@ -1,0 +1,29 @@
+body,div {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.row,.column {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;  
+}
+
+.column.top {
+    justify-content: flex-start;
+}
+
+.column.bottom {
+    justify-content: flex-end;
+}
+
+.grow {
+    flex-grow: 1;
+}
