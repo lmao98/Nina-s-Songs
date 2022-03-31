@@ -15,12 +15,17 @@ function SingleSong() {
     updateSong()
   }, [])
 
+  async function deleteReview(reviewId) {
+    const response = await axios.delete(`/api/song/${id}/review/${reviewId}`)
+    console.log(response.data)
+  }
+
   return (
     song ? <>
       <h1>{song.songName}</h1>
       <h2>{song.bandName}</h2>
       <SongPlayer {...song} />
-      <Reviews reviews={song.reviews} />
+      <Reviews onDelete={deleteReview} reviews={song.reviews} />
     </> :
       null
   )
