@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 })
 
 // get song by id
-router.get('/:id', async(req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const songId = req.params.id
         const song = await songModel.findById(songId).populate('reviews')
@@ -46,7 +46,7 @@ router.get('/:id', async(req, res) => {
 })
 
 // delete song by id
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const songId = req.params.id
         const deletedSong = await songModel.findByIdAndDelete(songId)
@@ -60,7 +60,7 @@ router.delete('/:id', async(req, res) => {
 })
 
 // add a review
-router.put('/:id/review', async(req, res) => {
+router.put('/:id/review', async (req, res) => {
     try {
         const songId = req.params.id
         const review = req.body
@@ -69,6 +69,23 @@ router.put('/:id/review', async(req, res) => {
         song.reviewIds.push(newReview)
         await song.save()
         res.json(song)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            error: error.message
+        })
+    }
+})
+
+// delete a review
+router.delete('/:songId/review/:reviewId', async (req, res) => {
+    try {
+        const { songId, reviewId } = req.params
+        const deletedReview = await reviewModel.findByIdAndDelete(reviewId)
+        const updatedSong = await songModel.findById(songId)
+        updatedSong.reviewIds = updatedSong.reviewIds.filter((filteredId) => { return filteredId != reviewId })
+        await updatedSong.save()
+        res.json(updatedSong.reviewIds)
     } catch (error) {
         console.log(error)
         res.status(500).json({
