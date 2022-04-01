@@ -1,6 +1,6 @@
 ![Image](https://i.ibb.co/1vzP4kV/Nina-s-Songs-2.png)
-## ** Date: 3/27/2022 **
-### ** By: Abdullah Albayati **
+##  Date: 3/27/2022 
+### By: Abdullah Albayati 
 ### *Songs covers by Nina*
 #### The Customer can pick 4 different songs in this website and it will display the songs if available in the website. It also displays information about the songs. The customer should also be able to rate, review, or delete added review.
 ##### Violt
