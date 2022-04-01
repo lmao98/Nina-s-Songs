@@ -3,8 +3,6 @@ const songModel = require('../models/song')
 
 
 const main = async (db) => {
-    // const entranceCafe = await Location.find({ name: 'Entrance' })
-    // const safariCafe = await Location.find({ name: 'Safari Park' })
     const abeReview = await reviewModel.findOne({ reviewer: "Abe" })
     const moReview = await reviewModel.findOne({ reviewer: "Mo" })
     const omarReview = await reviewModel.findOne({ reviewer: "Omar" })
@@ -15,9 +13,9 @@ const main = async (db) => {
         {
             src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241397061&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             bandLink: "https://soundcloud.com/noor-alseed",
-            bandName:"raven club",
+            bandName: "raven club",
             songLink: "https://soundcloud.com/noor-alseed/violt",
-            songName:"violt",
+            songName: "violt",
             reviewIds: [
                 abeReview._id
             ]
@@ -25,9 +23,9 @@ const main = async (db) => {
         {
             src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241204278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             bandLink: "https://soundcloud.com/noor-alseed",
-            bandName:"raven club",
+            bandName: "raven club",
             songLink: "https://soundcloud.com/noor-alseed/at-my-worst",
-            songName:"at my worst",
+            songName: "at my worst",
             reviewIds: [
                 moReview._id
             ]
@@ -35,9 +33,9 @@ const main = async (db) => {
         {
             src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241202718&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             bandLink: "https://soundcloud.com/noor-alseed",
-            bandName:"raven club",
+            bandName: "raven club",
             songLink: "https://soundcloud.com/noor-alseed/heather",
-            songName:"HEATHER",
+            songName: "HEATHER",
             reviewIds: [
                 omarReview._id
             ]
@@ -45,9 +43,9 @@ const main = async (db) => {
         {
             src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1241200324&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
             bandLink: "https://soundcloud.com/noor-alseed",
-            bandName:"raven club",
+            bandName: "raven club",
             songLink: "https://soundcloud.com/noor-alseed/no-time-to-die",
-            songName:"no time to die",
+            songName: "no time to die",
             reviewIds: [
                 ahmedReview._id,
                 kimReview._id
